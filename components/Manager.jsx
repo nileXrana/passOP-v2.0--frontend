@@ -1,5 +1,5 @@
 import React from 'react'
-import Auth from './auth';
+import Authentication from './Authentication';
 import { useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 // import { ToastContainer, toast } from 'react-toastify';
@@ -119,7 +119,7 @@ const Manager = () => {
             {/* Same as */}
             <div className="fixed inset-0 -z-10 h-full w-full bg-green-200 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div></div>
             <div className='relative'>
-                <div className=' absolute right-0 p-5 max-md:w-[65px] max-md:p-2'><Auth getPasswords={getPasswords} setsignin={setsignin}/></div>
+                <div className=' absolute right-0 p-5 max-md:w-[65px] max-md:p-2'><Authentication getPasswords={getPasswords} setsignin={setsignin}/></div>
                 <div className="container  w-[80vw] mx-auto p-2 flex flex-col gap-5 max-lg:w-[100vw]">
                     <div className="logo font-bold ml-5 text-center text-2xl">
                         <span className='text-green-500'>{'<'}</span>
