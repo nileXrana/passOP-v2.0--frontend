@@ -28,4 +28,4 @@ A secure, modern password manager web app built with React, Node.js (Express), a
 git clone https://github.com/nileXrana/passOP-v2.0--frontend
 cd passOP-v2.0--frontend
 npm install
-npm start
+npm run dev
