@@ -10,7 +10,6 @@ const Auth = ({ getPasswords,setsignin }) => {
                         const token = credentialResponse.credential;
                         getPasswords(token)
                         setsignin(true)
-
                     }}
                     onError={() => {
                         console.log('Login Failed');
