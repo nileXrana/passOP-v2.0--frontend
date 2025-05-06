@@ -20,7 +20,8 @@ A secure, modern password manager web app built with React, Node.js (Express), a
 - **Database:** MongoDB Atlas
 - **Deployment:** Vercel (Frontend), Railway (Backend)
 
-- **Version-1.0(uses local storage) :** https://github.com/nileXrana/passOP-v1.0-
+## Version-1.0(uses local storage) 
+- https://github.com/nileXrana/passOP-v1.0-
 
 ### 🔹 Frontend
 ```bash
