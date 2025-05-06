@@ -50,7 +50,6 @@ const Manager = () => {
     }
 
     const copyText = (text) => {
-        alert("copied to clipboard")
         navigator.clipboard.writeText(text);
     }
     const eyeToggle = () => {
