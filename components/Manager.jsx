@@ -98,7 +98,7 @@ const Manager = () => {
         if (c) {
             setpasswordArray(passwordArray.filter(item => item.id != id))
             // localStorage.setItem("passwords", JSON.stringify(passwordArray.filter(item => item.id != id)))
-            let res = await fetch("passop-v20-backend-production.up.railway.app/", {
+            let res = await fetch("https://passop-v20-backend-production.up.railway.app/", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
