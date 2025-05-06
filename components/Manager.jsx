@@ -2,7 +2,6 @@ import React from 'react'
 import Authentication from './Authentication';
 import { useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import { ToastContainer, toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 
 const Manager = () => {
@@ -20,7 +19,7 @@ const Manager = () => {
         }
     }, [])
     const getPass = async()=>{
-        let req = await fetch(`http://passop-v20-backend-production.up.railway.app/get-passwords?email=${localStorage.getItem("email")}`, {
+        let req = await fetch(`https://passop-v20-backend-production.up.railway.app/get-passwords?email=${localStorage.getItem("email")}`, {
             method: "GET"
         }); // using slug to send email :
         let passwords = await req.json();
@@ -29,7 +28,7 @@ const Manager = () => {
 
     const getPasswords = async (token) => {
         // verify token and get email and name :
-        const ak = await fetch(`http://passop-v20-backend-production.up.railway.app/verify-token`, {
+        const ak = await fetch(`https://passop-v20-backend-production.up.railway.app/verify-token`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ token })
@@ -40,7 +39,7 @@ const Manager = () => {
             alert("Login Successfully, Welcome " + bk.name)
             localStorage.setItem("email",bk.email)
             // setform({ ...form, email: bk.email }); // ADDING EMAIL TO FORM :
-            let req = await fetch(`http://passop-v20-backend-production.up.railway.app/get-passwords?email=${bk.email}`, {
+            let req = await fetch(`https://passop-v20-backend-production.up.railway.app/get-passwords?email=${bk.email}`, {
                 method: "GET"
             }); // using slug to send email :
             let passwords = await req.json();
@@ -65,13 +64,13 @@ const Manager = () => {
             if (signin) {
                 if (form.id) {
                     // Update existing entry
-                    await fetch(`http://passop-v20-backend-production.up.railway.app`, {
+                    await fetch(`https://passop-v20-backend-production.up.railway.app`, {
                         method: "DELETE",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ id: form.id })
                     });
                     let iddd = uuidv4();
-                    await fetch("http://passop-v20-backend-production.up.railway.app", {
+                    await fetch("https://passop-v20-backend-production.up.railway.app", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ ...form, id: iddd,email: localStorage.getItem("email") })
@@ -80,7 +79,7 @@ const Manager = () => {
                 } else {
                     // Create new entry
                     let iddd = uuidv4();
-                    await fetch("http://passop-v20-backend-production.up.railway.app", {
+                    await fetch("https://passop-v20-backend-production.up.railway.app", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ ...form, id: iddd,email: localStorage.getItem("email") })
